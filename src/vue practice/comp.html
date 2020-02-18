@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>vue components</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="custid" v-theme:column="'wide'">
+      <div id="comp">
+        <h2>My first component</h2>
+        <greeting></greeting>
+        <h3>food diet and their benefits stack </h3>
+        <input type="text" v-focus placeholder="search box">
+        <ul v-for="food in foods">
+          <li v-randcolor>{{ food | to-uppercase }}</li>
+        </ul>
+      </div>
+
+      <!-- 2nd comp -->
+      <div id="v-comp1">
+        <custom-input
+          v-model="searchText"
+          v-bind:value="searchText"
+          placeholder="custom box"
+          v-on:input="searchText = $event"
+          ></custom-input>
+          <p>{{ searchText }}</p>
+        <h3>Blog post components</h3>
+        <div :style="{ fontSize: postFontSize + 'em' }">
+          <blog-post
+            v-for="post in posts"
+            v-bind:key="post.key"
+            v-bind:id="post.id"
+            v-bind:title="post.title"
+            v-bind:content="post.content"
+            v-bind:author="post.author"
+            v-bind:comment="post.comment"
+            v-on:enlarge-text="postFontSize += 0.1"
+          ></blog-post>
+        </div>
+        <alert-box>
+          Something bad happend
+        </alert-box>
+      </div>
+    </div>
+
+    <!-- vue and js script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="comp.js"></script>
+  </body>
+</html>

@@ -1,28 +1,48 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <!-- <div id="header-img">
+      <img alt="Vue logo" src="./assets/logo.png">
+    </div> -->
+    <!-- <add-blog></add-blog> -->
+    <!-- <show-blog></show-blog> -->
+    <!-- <list-blog></list-blog> -->
+    <app-header></app-header>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import addBlog from './components/addBlog.vue'
+import showBlog from './components/showBlog.vue'
+import listBlog from './components/listBlog.vue'
+// importing router page links
+import header from './components/header.vue'
 
+// export object
 export default {
-  name: 'app',
   components: {
-    HelloWorld
-  }
+    'add-blog': addBlog,
+    'show-blog': showBlog,
+    'list-blog': listBlog,
+    'app-header': header
+
+  },
+methods: {
+
+ }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body{
+  margin: 0;
+  font-family: 'Nunito SemiBold';
+}
+#header-img {
+  width: 20%;
+  margin: 0 auto;
+}
+#header-img img {
+  max-width: 20%;
 }
 </style>
