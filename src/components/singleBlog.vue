@@ -85,7 +85,7 @@ export default {
         //   console.log(doc);
         // })
       })
-    },
+    }
   }
 }
 </script>
